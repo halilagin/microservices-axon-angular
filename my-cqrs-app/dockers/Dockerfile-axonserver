@@ -1,0 +1,10 @@
+#see: https://hub.docker.com/r/adoptopenjdk/openjdk11/
+#see: https://hub.docker.com/layers/adoptopenjdk/openjdk11/jre-11.0.8_10-alpine/images/sha256-4f3b15c98c92b942b8b548c5288797ca90e64d58d1de476c8015576f4ffc1e0f?context=explore
+FROM adoptopenjdk/openjdk11:jre-11.0.8_10-alpine
+
+
+EXPOSE 8024 8124
+
+ADD axonserver-4.4.jar axonserver-4.4.jar
+
+ENTRYPOINT ["java", "-jar", "axonserver-4.4.jar"]
